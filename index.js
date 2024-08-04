@@ -161,7 +161,7 @@ var tl2 = gsap.timeline({
     pin: true,
 
     scrub: 2,
-    end: "+=12000px",
+    end: "+=4000px",
     // markers:true
   },
 });
