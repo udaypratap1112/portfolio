@@ -20,7 +20,7 @@ lenis.on("scroll", (e) => {
 lenis.on("scroll", ScrollTrigger.update);
 
 gsap.ticker.add((time) => {
-  lenis.raf(time * 5000);
+  lenis.raf(time * 300);
 });
 
 gsap.ticker.lagSmoothing(0);
@@ -168,7 +168,8 @@ var tl2 = gsap.timeline({
 
 const pageTwoImage = document.querySelector(".page2-image");
 
-const pages = gsap.utils.toArray(".container section");
+// const pages = gsap.utils.toArray(".container section");
+const pages= document.querySelector('.container')
 
 const s1 = document.querySelector(".page2").getBoundingClientRect().top;
 if (scrollDirectionHorizontal) {
@@ -294,7 +295,7 @@ tl2.to(".layer3-img", { scale: 1 }, "<");
 if (scrollDirectionHorizontal) {
   tl2.to(pages, { x: `-${footerstop}px`});
 } else {
-  tl2.to(pages, { y: `-${f2}px`});
+  tl2.to(pages, { y: `-${f2 + 100}px`});
 }
 tl2.to(".page3", { onUpdate: async function () { gradientGenerator(this.progress() * 43, "layer3", "maskLayer3"); }, }, "<");
 
@@ -329,7 +330,7 @@ function mobileMenuFunctionality() {
 mobileMenuFunctionality();
 
 function goToWork() {
-  window.scrollTo({ top: 2000, behavior: "smooth" });
+  window.scrollTo({ top: 1620, behavior: "smooth" });
   document.querySelector(".menu").click();
 }
 function goToContact() {
