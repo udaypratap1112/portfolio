@@ -1,15 +1,7 @@
 const stops0 = document.querySelector(".page2").getBoundingClientRect().left;
 const stops = document.querySelector(".page3").getBoundingClientRect().left;
 
-// var timer;
 
-// window.onresize = () => {
-//   clearTimeout(timer)
-//   timer=setTimeout(() => {
-
-//     window.location.reload()
-//   },1000);
-// }
 
 var scrollDirectionHorizontal = true;
 document.querySelector("body").style.setProperty(`--maskDirection`, "90deg");
