@@ -122,12 +122,13 @@ for (let i = 1; i <= 10; i++) {
 
 loadingTl.timeScale(3).play();
 
-const logo_tl = gsap.timeline({ paused: true });
+const logo_tl = gsap.timeline();
 
 logo_tl.from(".navLogo span", {
   yPercent: 100,
   duration: 1,
-  stagger: 0.01,
+  stagger: 0.08,
+  delay:2.5,
   ease: "power1.out",
 });
 
@@ -160,7 +161,7 @@ var tl2 = gsap.timeline({
     pin: true,
 
     scrub: 2,
-    end: "+=5000px",
+    end: "+=12000px",
     // markers:true
   },
 });
@@ -205,12 +206,10 @@ gradientGenerator(0, "page1", "mask1");
 tl2.to(
   ".page1",
   {
-    onUpdate: async function () {
+    onUpdate:  function () {
       gradientGenerator(this.progress() * 43, "page1", "mask1");
     },
-    onComplete: function () {
-      logo_tl.play();
-    },
+   
   },
   "<"
 );
